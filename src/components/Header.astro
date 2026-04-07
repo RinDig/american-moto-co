@@ -1,13 +1,13 @@
 ---
+import { url } from '../lib/utils';
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Stories', href: '/stories' },
-  { label: 'About', href: '/about' },
-  { label: 'Submit', href: '/submit' },
+  { label: 'Home', href: url('/') },
+  { label: 'Stories', href: url('/stories') },
+  { label: 'About', href: url('/about') },
+  { label: 'Submit', href: url('/submit') },
 ];
-import { url } from '../lib/utils';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-30 transition-all duration-300" id="site-header">

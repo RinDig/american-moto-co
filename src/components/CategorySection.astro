@@ -22,7 +22,7 @@ const categories: { id: Category; description: string; image: string }[] = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {categories.map(cat => (
         <a
-          href={`/stories?category=${cat.id}`}
+          href={`${url('/stories')}?category=${cat.id}`}
           class="group block rounded-lg overflow-hidden bg-white shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer hover:-translate-y-1"
         >
           <!-- Category image -->

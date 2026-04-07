@@ -13,13 +13,14 @@ const socialLinks = [
   { name: 'Bluesky', href: '#' },
 ];
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Stories', href: '/stories' },
-  { label: 'About', href: '/about' },
-  { label: 'Submit Your Story', href: '/submit' },
-];
 import { url } from '../lib/utils';
+
+const navLinks = [
+  { label: 'Home', href: url('/') },
+  { label: 'Stories', href: url('/stories') },
+  { label: 'About', href: url('/about') },
+  { label: 'Submit Your Story', href: url('/submit') },
+];
 ---
 
 <footer class="bg-dark text-cream border-t border-white/5">
