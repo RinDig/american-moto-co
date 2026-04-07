@@ -1,28 +1,13 @@
 ---
 import { categoryLabels, getCategoryCount } from '../data/articles';
 import type { Category } from '../data/articles';
+import { url } from '../lib/utils';
 
 const categories: { id: Category; description: string; image: string }[] = [
-  {
-    id: 'profiles',
-    description: 'Long-form interviews with riders from every walk of life.',
-    image: '/images/rider-1.jpg',
-  },
-  {
-    id: 'reviews',
-    description: 'Honest motorcycle reviews from the people who actually ride them.',
-    image: '/images/bike-closeup.jpg',
-  },
-  {
-    id: 'epic-rides',
-    description: 'Routes, roads, and rides that belong on your bucket list.',
-    image: '/images/mountain-road.jpg',
-  },
-  {
-    id: 'features',
-    description: 'Deep dives into motorcycle culture, events, and community.',
-    image: '/images/group-ride.jpg',
-  },
+  { id: 'profiles', description: 'Long-form interviews with riders from every walk of life.', image: url('/images/rider-1.jpg') },
+  { id: 'reviews', description: 'Honest motorcycle reviews from the people who actually ride them.', image: url('/images/bike-closeup.jpg') },
+  { id: 'epic-rides', description: 'Routes, roads, and rides that belong on your bucket list.', image: url('/images/mountain-road.jpg') },
+  { id: 'features', description: 'Deep dives into motorcycle culture, events, and community.', image: url('/images/group-ride.jpg') },
 ];
 ---
 

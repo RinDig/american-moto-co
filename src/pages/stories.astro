@@ -7,12 +7,13 @@ import type { Category } from '../data/articles';
 
 const sortedArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date));
 const categories: (Category | 'all')[] = ['all', 'profiles', 'reviews', 'epic-rides', 'features', 'weekly'];
+import { url } from '../lib/utils';
 ---
 
 <BaseLayout title="Stories" description="Stories from the road — rider profiles, motorcycle reviews, epic rides, and more from the motorcycle community.">
   <!-- Page header with background -->
   <section class="relative pt-28 pb-14 lg:pt-36 lg:pb-18 overflow-hidden">
-    <img src="/images/hero-road.jpg" alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
+    <img src={url('/images/hero-road.jpg')} alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
     <div class="absolute inset-0 bg-dark/80"></div>
     <div class="relative container-site">
       <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Archive</span>
@@ -54,7 +55,7 @@ const categories: (Category | 'all')[] = ['all', 'profiles', 'reviews', 'epic-ri
 
       <div id="empty-state" class="hidden text-center py-16">
         <p class="text-ink-light text-lg font-heading">No stories in this category yet.</p>
-        <p class="text-muted text-sm mt-2">Check back soon — or <a href="/submit" class="text-sage hover:underline">submit your own</a>.</p>
+        <p class="text-muted text-sm mt-2">Check back soon — or <a href={url('/submit')} class="text-sage hover:underline">submit your own</a>.</p>
       </div>
     </div>
   </section>

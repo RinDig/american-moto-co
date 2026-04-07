@@ -4,6 +4,7 @@ interface Props {
 }
 const { variant = 'light' } = Astro.props;
 const isLight = variant === 'light';
+import { url } from '../lib/utils';
 ---
 
 <section class:list={[isLight ? 'section-light' : 'section-dark', 'section-padding']} id="subscribe">
@@ -14,7 +15,7 @@ const isLight = variant === 'light';
     ]}>
       <!-- Background image accent -->
       <img
-        src="/images/sunset-ride.jpg"
+        src={url('/images/sunset-ride.jpg')}
         alt=""
         class="absolute inset-0 img-cover opacity-10"
         loading="lazy"

@@ -4,12 +4,13 @@ interface Props {
 }
 
 const { quote = "Built for riders, who just want to ride." } = Astro.props;
+import { url } from '../lib/utils';
 ---
 
 <section class="relative py-16 lg:py-24 overflow-hidden section-forest">
   <!-- Background image -->
   <img
-    src="/images/forest-road.jpg"
+    src={url('/images/forest-road.jpg')}
     alt=""
     class="absolute inset-0 img-cover opacity-20"
     loading="lazy"

@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SubscribeBanner from '../components/SubscribeBanner.astro';
+import { url } from '../lib/utils';
 ---
 
 <BaseLayout title="About" description="American Moto Co. is a motorcycle culture media brand built for riders who just want to ride. No brand loyalty required.">
   <!-- Hero with image -->
   <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-    <img src="/images/adventure-rider.jpg" alt="" class="absolute inset-0 img-cover opacity-25" aria-hidden="true" />
+    <img src={url('/images/adventure-rider.jpg')} alt="" class="absolute inset-0 img-cover opacity-25" aria-hidden="true" />
     <div class="absolute inset-0 bg-dark/75"></div>
     <div class="relative container-site">
       <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">About</span>
@@ -65,7 +66,7 @@ import SubscribeBanner from '../components/SubscribeBanner.astro';
     <div class="container-site">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div class="rounded-lg overflow-hidden aspect-[4/3]">
-          <img src="/images/rider-1.jpg" alt="Motorcycle rider on a forest road" class="img-cover img-documentary" loading="lazy" />
+          <img src={url('/images/rider-1.jpg')} alt="Motorcycle rider on a forest road" class="img-cover img-documentary" loading="lazy" />
         </div>
         <div>
           <h2 class="text-h2 text-ink mb-6">The Story Behind the Story</h2>

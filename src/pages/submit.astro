@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/utils';
 ---
 
 <BaseLayout title="Submit Your Story" description="Got a story from the road? We want to hear it. Submit your rider story, route, or review to American Moto Co.">
   <!-- Hero -->
   <section class="relative pt-28 pb-14 lg:pt-36 lg:pb-20 overflow-hidden">
-    <img src="/images/mountain-road.jpg" alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
+    <img src={url('/images/mountain-road.jpg')} alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
     <div class="absolute inset-0 bg-dark/75"></div>
     <div class="relative container-site">
       <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Contribute</span>
@@ -22,10 +23,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="text-h2 text-ink mb-8 text-center">What We Publish</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-wide mx-auto">
         {[
-          { title: 'Rider Profiles', desc: 'Your story, in your words. The crash that taught you something, the trip that changed your mind, the community that showed up.', color: 'text-mauve', image: '/images/rider-1.jpg' },
-          { title: 'Honest Reviews', desc: "Real reviews from real owners — not first-ride impressions, but the kind of knowledge you only get from putting miles on a machine.", color: 'text-sage', image: '/images/bike-closeup.jpg' },
-          { title: 'Epic Rides & Routes', desc: "Found a road that made you pull over just to take it in? Share it so other riders can experience it too.", color: 'text-gold', image: '/images/mountain-road.jpg' },
-          { title: 'Culture & Features', desc: "Rallies, races, builders, communities — if it's part of motorcycle culture and you have a unique perspective, we want to know.", color: 'text-dark-brown', image: '/images/group-ride.jpg' },
+          { title: 'Rider Profiles', desc: 'Your story, in your words. The crash that taught you something, the trip that changed your mind, the community that showed up.', color: 'text-mauve', image: url('/images/rider-1.jpg') },
+          { title: 'Honest Reviews', desc: "Real reviews from real owners — not first-ride impressions, but the kind of knowledge you only get from putting miles on a machine.", color: 'text-sage', image: url('/images/bike-closeup.jpg') },
+          { title: 'Epic Rides & Routes', desc: "Found a road that made you pull over just to take it in? Share it so other riders can experience it too.", color: 'text-gold', image: url('/images/mountain-road.jpg') },
+          { title: 'Culture & Features', desc: "Rallies, races, builders, communities — if it's part of motorcycle culture and you have a unique perspective, we want to know.", color: 'text-dark-brown', image: url('/images/group-ride.jpg') },
         ].map(item => (
           <div class="bg-white rounded-lg shadow-card overflow-hidden flex">
             <div class="w-28 sm:w-36 shrink-0">

@@ -9,6 +9,7 @@ interface Props {
 
 const { count = 6, title = "Latest from the Road" } = Astro.props;
 const latest = getLatestArticles(count);
+import { url } from '../lib/utils';
 ---
 
 <section class="section-dark section-padding">
@@ -19,7 +20,7 @@ const latest = getLatestArticles(count);
         <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Recent</span>
         <h2 class="text-h2 text-white mt-1">{title}</h2>
       </div>
-      <a href="/stories" class="hidden sm:inline-flex text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+      <a href={url('/stories')} class="hidden sm:inline-flex text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
         See More &rarr;
       </a>
     </div>
@@ -32,7 +33,7 @@ const latest = getLatestArticles(count);
     </div>
 
     <div class="mt-6 sm:hidden text-center">
-      <a href="/stories" class="text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+      <a href={url('/stories')} class="text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
         See More Stories &rarr;
       </a>
     </div>

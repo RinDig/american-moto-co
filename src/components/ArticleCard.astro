@@ -12,7 +12,8 @@ interface Props {
 const { article, index = 0, variant = 'dark', size = 'default' } = Astro.props;
 const isLarge = size === 'large';
 const isLight = variant === 'light';
-const image = getImageForArticle(article, index);
+import { url } from '../lib/utils';
+const image = url(getImageForArticle(article, index));
 ---
 
 <a

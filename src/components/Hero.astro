@@ -1,10 +1,11 @@
 ---
+import { url } from '../lib/utils';
 ---
 
 <section class="relative h-[90vh] min-h-[600px] max-h-[900px] flex items-center justify-center overflow-hidden">
   <!-- Background image -->
   <img
-    src="/images/hero-forest-pov.jpg"
+    src={url('/images/hero-forest-pov.jpg')}
     alt="Point of view riding a motorcycle through a forest road"
     class="absolute inset-0 img-cover img-documentary"
     loading="eager"
@@ -17,7 +18,7 @@
     <!-- Logo -->
     <div class="mb-6">
       <img
-        src="/images/logo.png"
+        src={url('/images/logo.png')}
         alt="American Moto Co."
         class="h-14 sm:h-18 mx-auto invert mix-blend-screen"
       />

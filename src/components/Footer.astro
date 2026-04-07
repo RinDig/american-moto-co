@@ -19,6 +19,7 @@ const navLinks = [
   { label: 'About', href: '/about' },
   { label: 'Submit Your Story', href: '/submit' },
 ];
+import { url } from '../lib/utils';
 ---
 
 <footer class="bg-dark text-cream border-t border-white/5">
@@ -27,9 +28,9 @@ const navLinks = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
       <!-- Logo + tagline -->
       <div>
-        <a href="/" class="inline-block" aria-label="American Moto Co. — Home">
+        <a href={url('/')} class="inline-block" aria-label="American Moto Co. — Home">
           <img
-            src="/images/logo.png"
+            src={url('/images/logo.png')}
             alt="American Moto Co."
             class="h-8 w-auto invert mix-blend-screen"
           />
