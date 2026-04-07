@@ -1,19 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import LogoScroll from '../components/LogoScroll.astro';
+import FounderBio from '../components/FounderBio.astro';
 import FeaturedGrid from '../components/FeaturedGrid.astro';
 import CategorySection from '../components/CategorySection.astro';
-import PullQuote from '../components/PullQuote.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import SubscribeBanner from '../components/SubscribeBanner.astro';
 import { url } from '../lib/utils';
 ---
 
-<BaseLayout title="Home" description="Breaking down the walls to share the stories from the road, no matter what you ride. Motorcycle culture, rider stories, and epic rides.">
+<BaseLayout title="Home" description="Sharing the stories from the road. Motorcycle culture, rider stories, and epic rides — no matter what you ride.">
   <Hero />
+  <LogoScroll />
+  <FounderBio />
   <FeaturedGrid />
   <CategorySection />
-  <PullQuote />
   <LatestArticles />
   <SubscribeBanner />
 </BaseLayout>

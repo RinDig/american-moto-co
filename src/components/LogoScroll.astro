@@ -1,0 +1,42 @@
+---
+// Placeholder businesses - replace with actual partner logos later
+const businesses = [
+  'RevZilla', 'Cycle Gear', 'Dainese', 'Shoei', 'Alpinestars',
+  'Icon', 'Bell Helmets', 'Sena', 'Cardo', 'SW-Motech',
+  'Motul', 'Michelin Moto',
+];
+---
+
+<section class="py-10 bg-white border-y border-border-light overflow-hidden">
+  <div class="container-site mb-4">
+    <p class="text-center text-muted font-heading font-semibold text-xs uppercase tracking-widest">Businesses We Support</p>
+  </div>
+  <div class="relative">
+    <!-- Fade edges -->
+    <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+    <!-- Scrolling logos -->
+    <div class="flex animate-scroll gap-12 items-center">
+      {[...businesses, ...businesses].map(name => (
+        <span class="text-ink/20 font-heading font-bold text-lg whitespace-nowrap shrink-0 select-none">
+          {name}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    width: max-content;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll { animation: none; }
+  }
+</style>

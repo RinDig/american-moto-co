@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/utils';
+---
+
+<BaseLayout title="Contact" description="Get in touch with American Moto Co. Suggest an interview, submit a story, or just say hello.">
+  <!-- Hero -->
+  <section class="relative pt-28 pb-14 lg:pt-36 lg:pb-20 overflow-hidden">
+    <img src={url('/images/mountain-road.jpg')} alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
+    <div class="absolute inset-0 bg-dark/75"></div>
+    <div class="relative container-site">
+      <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Contact</span>
+      <h1 class="text-h1 text-white mt-1 mb-4">Get in Touch</h1>
+      <p class="text-cream/80 text-body-lg max-w-2xl leading-relaxed">
+        Whether you've got a story to share, want to suggest an interview, or just want to say hello — we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact options -->
+  <section class="section-light section-padding">
+    <div class="container-site">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-wide mx-auto">
+        <!-- Suggest an Interview -->
+        <div class="bg-white rounded-lg shadow-card p-6 text-center">
+          <div class="w-14 h-14 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-sage" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-ink text-h3 mb-2">Suggest an Interview</h3>
+          <p class="text-ink-light text-sm leading-relaxed mb-4">
+            Know a rider with a story worth telling? Point us in their direction.
+          </p>
+          <a href="https://www.americanmotoco.com/forms/5041bad6-e6ac-4ff0-b1ff-69a4b01b5197" target="_blank" rel="noopener noreferrer" class="inline-block bg-sage text-white font-heading font-semibold uppercase tracking-wider px-6 py-2.5 rounded-lg hover:bg-sage/90 transition-all cursor-pointer text-xs">
+            Suggest Someone
+          </a>
+        </div>
+
+        <!-- Submit a Story -->
+        <div class="bg-white rounded-lg shadow-card p-6 text-center">
+          <div class="w-14 h-14 rounded-full bg-mauve/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-mauve" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-ink text-h3 mb-2">Submit Your Story</h3>
+          <p class="text-ink-light text-sm leading-relaxed mb-4">
+            Got a ride, a review, or a route worth sharing? We want to hear it.
+          </p>
+          <a href="https://www.americanmotoco.com/forms/5041bad6-e6ac-4ff0-b1ff-69a4b01b5197" target="_blank" rel="noopener noreferrer" class="inline-block bg-mauve text-white font-heading font-semibold uppercase tracking-wider px-6 py-2.5 rounded-lg hover:bg-mauve/90 transition-all cursor-pointer text-xs">
+            Submit a Story
+          </a>
+        </div>
+
+        <!-- General Contact -->
+        <div class="bg-white rounded-lg shadow-card p-6 text-center">
+          <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+          </div>
+          <h3 class="font-heading font-bold text-ink text-h3 mb-2">Say Hello</h3>
+          <p class="text-ink-light text-sm leading-relaxed mb-4">
+            Questions, feedback, partnerships, or just want to talk bikes? Drop us a line.
+          </p>
+          <a href="mailto:hello@americanmotoco.com" class="inline-block bg-gold text-dark font-heading font-semibold uppercase tracking-wider px-6 py-2.5 rounded-lg hover:bg-gold/90 transition-all cursor-pointer text-xs">
+            Email Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ placeholder -->
+  <section class="section-sand section-padding">
+    <div class="container-site">
+      <div class="max-w-content mx-auto">
+        <h2 class="text-h2 text-ink mb-8 text-center">FAQ</h2>
+        <div class="space-y-4">
+          {[
+            { q: 'What kind of stories do you publish?', a: 'Rider profiles, honest motorcycle reviews, epic ride routes, and culture features. If it involves two wheels and a story worth telling, we want it.' },
+            { q: 'Do I need to be a professional writer?', a: "Not at all. Write it however feels natural — we'll work with you to shape it while keeping your voice intact." },
+            { q: 'How do I suggest someone for an interview?', a: 'Use the "Suggest an Interview" form above. Tell us who they are, what they ride, and why their story matters.' },
+            { q: 'Is American Moto Co. affiliated with any motorcycle brand?', a: "No. We're proudly brand-agnostic. No matter what you ride — Harley, Honda, KTM, Vespa — you belong here." },
+            { q: 'How can I support AMC?', a: 'Subscribe to the newsletter, share stories with your riding community, and follow us on social media. Word of mouth is everything.' },
+          ].map(item => (
+            <details class="bg-white rounded-lg shadow-card p-5 group cursor-pointer">
+              <summary class="font-heading font-semibold text-ink text-base flex items-center justify-between list-none">
+                {item.q}
+                <svg class="w-5 h-5 text-muted shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </summary>
+              <p class="text-ink-light text-sm leading-relaxed mt-3 pt-3 border-t border-border-light">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
