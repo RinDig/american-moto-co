@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Submit Your Story" description="Got a story from the road? We want to hear it. Submit your rider story, route, or review to American Moto Co.">
+  <!-- Hero -->
+  <section class="relative pt-28 pb-14 lg:pt-36 lg:pb-20 overflow-hidden">
+    <img src="/images/mountain-road.jpg" alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
+    <div class="absolute inset-0 bg-dark/75"></div>
+    <div class="relative container-site">
+      <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Contribute</span>
+      <h1 class="text-h1 text-white mt-1 mb-4">Got a Story?<br />We Want to Hear It.</h1>
+      <p class="text-cream/80 text-body-lg max-w-2xl leading-relaxed">
+        The best stories come from riders like you. Whether it's a ride that changed your perspective, a bike that earned its scars, or a route that nobody talks about — we want to tell it.
+      </p>
+    </div>
+  </section>
+
+  <!-- What We Publish — light -->
+  <section class="section-light section-padding">
+    <div class="container-site">
+      <h2 class="text-h2 text-ink mb-8 text-center">What We Publish</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-wide mx-auto">
+        {[
+          { title: 'Rider Profiles', desc: 'Your story, in your words. The crash that taught you something, the trip that changed your mind, the community that showed up.', color: 'text-mauve', image: '/images/rider-1.jpg' },
+          { title: 'Honest Reviews', desc: "Real reviews from real owners — not first-ride impressions, but the kind of knowledge you only get from putting miles on a machine.", color: 'text-sage', image: '/images/bike-closeup.jpg' },
+          { title: 'Epic Rides & Routes', desc: "Found a road that made you pull over just to take it in? Share it so other riders can experience it too.", color: 'text-gold', image: '/images/mountain-road.jpg' },
+          { title: 'Culture & Features', desc: "Rallies, races, builders, communities — if it's part of motorcycle culture and you have a unique perspective, we want to know.", color: 'text-dark-brown', image: '/images/group-ride.jpg' },
+        ].map(item => (
+          <div class="bg-white rounded-lg shadow-card overflow-hidden flex">
+            <div class="w-28 sm:w-36 shrink-0">
+              <img src={item.image} alt={item.title} class="img-cover h-full img-documentary" loading="lazy" />
+            </div>
+            <div class="p-4">
+              <h3 class:list={['font-heading font-semibold text-h3 mb-1', item.color]}>{item.title}</h3>
+              <p class="text-ink-light text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works — sand -->
+  <section class="section-sand section-padding">
+    <div class="container-site">
+      <div class="max-w-content mx-auto">
+        <h2 class="text-h2 text-ink mb-8">How It Works</h2>
+        <div class="space-y-6">
+          {[
+            { num: '1', title: 'Send Us Your Story', desc: "Write it however feels natural. 500 words, 2,000 words — it doesn't matter. Include any photos you have." },
+            { num: '2', title: "We'll Shape It Together", desc: "Our editors work with you to polish the story while keeping your voice intact. It's always your story." },
+            { num: '3', title: 'It Goes Live', desc: 'Your story gets published to our newsletter and website, reaching thousands of riders who get it.' },
+          ].map(step => (
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-sage text-white flex items-center justify-center">
+                <span class="font-heading font-bold text-sm">{step.num}</span>
+              </div>
+              <div>
+                <h3 class="font-heading font-semibold text-ink text-h3 mb-1">{step.title}</h3>
+                <p class="text-ink-light leading-relaxed text-sm">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-10 p-8 bg-white rounded-xl shadow-card text-center">
+          <h3 class="font-heading font-bold text-ink text-h2 mb-3">Ready?</h3>
+          <p class="text-ink-light mb-6 max-w-md mx-auto text-sm">
+            Drop us your story, a few photos, and a sentence about who you are.
+          </p>
+          <a
+            href="https://www.americanmotoco.com/forms/5041bad6-e6ac-4ff0-b1ff-69a4b01b5197"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-sage text-white font-heading font-bold uppercase tracking-wider px-10 py-4 rounded-lg hover:bg-sage/90 hover:shadow-lg transition-all cursor-pointer text-sm"
+          >
+            Submit Your Story
+          </a>
+          <p class="text-muted text-xs mt-3">
+            Opens the current submission form. A proper portal is coming soon.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

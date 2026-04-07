@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import SubscribeBanner from '../components/SubscribeBanner.astro';
+import { articles, categoryLabels } from '../data/articles';
+import type { Category } from '../data/articles';
+
+const sortedArticles = [...articles].sort((a, b) => b.date.localeCompare(a.date));
+const categories: (Category | 'all')[] = ['all', 'profiles', 'reviews', 'epic-rides', 'features', 'weekly'];
+---
+
+<BaseLayout title="Stories" description="Stories from the road — rider profiles, motorcycle reviews, epic rides, and more from the motorcycle community.">
+  <!-- Page header with background -->
+  <section class="relative pt-28 pb-14 lg:pt-36 lg:pb-18 overflow-hidden">
+    <img src="/images/hero-road.jpg" alt="" class="absolute inset-0 img-cover opacity-30" aria-hidden="true" />
+    <div class="absolute inset-0 bg-dark/80"></div>
+    <div class="relative container-site">
+      <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Archive</span>
+      <h1 class="text-h1 text-white mt-1 mb-3">Stories from the Road</h1>
+      <p class="text-cream/60 text-body-lg max-w-2xl">
+        Every ride has a story. Every rider has a voice. Here's where they live.
+      </p>
+    </div>
+  </section>
+
+  <!-- Category filter -->
+  <section class="sticky top-[72px] z-20 bg-cream border-b border-border-light shadow-sm">
+    <div class="container-site">
+      <div class="flex items-center gap-2 py-3 overflow-x-auto scrollbar-hide" role="tablist" aria-label="Filter articles by category" id="category-tabs">
+        {categories.map(cat => (
+          <button
+            class="font-heading font-medium text-xs uppercase tracking-wider px-4 py-2 rounded-full border transition-all cursor-pointer whitespace-nowrap category-tab"
+            data-category={cat}
+            role="tab"
+            aria-selected={cat === 'all' ? 'true' : 'false'}
+          >
+            {cat === 'all' ? 'All Stories' : categoryLabels[cat]}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles grid -->
+  <section class="section-light section-padding">
+    <div class="container-site">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="articles-grid">
+        {sortedArticles.map((article, i) => (
+          <div class="article-item" data-category={article.category}>
+            <ArticleCard article={article} index={i} variant="light" />
+          </div>
+        ))}
+      </div>
+
+      <div id="empty-state" class="hidden text-center py-16">
+        <p class="text-ink-light text-lg font-heading">No stories in this category yet.</p>
+        <p class="text-muted text-sm mt-2">Check back soon — or <a href="/submit" class="text-sage hover:underline">submit your own</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <SubscribeBanner variant="dark" />
+</BaseLayout>
+
+<style>
+  .category-tab[aria-selected="true"] {
+    @apply bg-sage text-white border-sage;
+  }
+  .category-tab[aria-selected="false"] {
+    background: transparent;
+    color: #5A5A5A;
+    border-color: #E5E2DB;
+  }
+  .category-tab[aria-selected="false"]:hover {
+    color: #2D5A27;
+    border-color: rgba(45, 90, 39, 0.4);
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll('.category-tab');
+  const items = document.querySelectorAll('.article-item');
+  const emptyState = document.getElementById('empty-state');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const category = (tab as HTMLElement).dataset.category;
+      tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+      let visibleCount = 0;
+      items.forEach(item => {
+        const el = item as HTMLElement;
+        if (category === 'all' || el.dataset.category === category) {
+          el.style.display = '';
+          visibleCount++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+      if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
+    });
+  });
+</script>

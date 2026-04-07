@@ -1,0 +1,65 @@
+---
+interface Props {
+  variant?: 'light' | 'dark';
+}
+const { variant = 'light' } = Astro.props;
+const isLight = variant === 'light';
+---
+
+<section class:list={[isLight ? 'section-light' : 'section-dark', 'section-padding']} id="subscribe">
+  <div class="container-site">
+    <div class:list={[
+      'relative rounded-xl overflow-hidden p-8 md:p-12',
+      isLight ? 'bg-white shadow-card' : 'bg-charcoal border border-border-subtle',
+    ]}>
+      <!-- Background image accent -->
+      <img
+        src="/images/sunset-ride.jpg"
+        alt=""
+        class="absolute inset-0 img-cover opacity-10"
+        loading="lazy"
+        aria-hidden="true"
+      />
+      <div class:list={[
+        'absolute inset-0',
+        isLight ? 'bg-white/90' : 'bg-charcoal/90',
+      ]}></div>
+
+      <div class="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+        <!-- Text -->
+        <div class="text-center lg:text-left">
+          <h2 class:list={['text-h2 mb-2', isLight ? 'text-ink' : 'text-white']}>
+            Never miss a story from the road
+          </h2>
+          <p class:list={[
+            'text-base max-w-lg',
+            isLight ? 'text-ink-light' : 'text-cream/60',
+          ]}>
+            Every week, real stories from real riders land in your inbox. No algorithms, no noise — just the road.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0" onsubmit="event.preventDefault()">
+          <input
+            type="email"
+            placeholder="your@email.com"
+            class:list={[
+              'rounded-lg px-5 py-3 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all w-full sm:w-72',
+              isLight
+                ? 'bg-sand border border-border-light text-ink placeholder:text-muted focus:border-sage'
+                : 'bg-dark border border-border-subtle text-cream placeholder:text-muted focus:border-gold',
+            ]}
+            aria-label="Email address for newsletter"
+          />
+          <button
+            type="submit"
+            class="bg-gold text-dark font-heading font-bold uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-gold/90 hover:shadow-lg transition-all cursor-pointer text-sm whitespace-nowrap"
+          >
+            Join the Ride
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

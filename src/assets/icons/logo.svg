@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 60" fill="currentColor">
+  <!-- AMERICAN MOTO text -->
+  <text x="0" y="44" font-family="'League Spartan', system-ui, sans-serif" font-weight="900" font-size="48" letter-spacing="2" fill="currentColor">AMERICAN MOTO</text>
+  <!-- CO. text slightly lighter weight -->
+  <text x="388" y="44" font-family="'League Spartan', system-ui, sans-serif" font-weight="700" font-size="40" letter-spacing="1" font-style="italic" fill="currentColor">Co.</text>
+  <!-- Winding road icon -->
+  <g transform="translate(448, 8)" stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <path d="M2 42 C8 30, 14 20, 22 12 C28 6, 34 2, 42 0" />
+    <path d="M12 42 C18 30, 24 20, 30 12 C36 6, 42 4, 50 3" />
+  </g>
+</svg>

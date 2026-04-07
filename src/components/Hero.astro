@@ -1,0 +1,58 @@
+---
+---
+
+<section class="relative h-[90vh] min-h-[600px] max-h-[900px] flex items-center justify-center overflow-hidden">
+  <!-- Background image -->
+  <img
+    src="/images/hero-forest-pov.jpg"
+    alt="Point of view riding a motorcycle through a forest road"
+    class="absolute inset-0 img-cover img-documentary"
+    loading="eager"
+  />
+  <!-- Dark overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/40 to-dark/80"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 container-site text-center px-4">
+    <!-- Logo -->
+    <div class="mb-6">
+      <img
+        src="/images/logo.png"
+        alt="American Moto Co."
+        class="h-14 sm:h-18 mx-auto invert mix-blend-screen"
+      />
+    </div>
+
+    <!-- Tagline -->
+    <p class="text-lg sm:text-xl text-white/90 max-w-xl mx-auto mb-8 font-body leading-relaxed">
+      Breaking down the walls to share the stories from the road,
+      <span class="text-gold italic font-medium">no matter what you ride.</span>
+    </p>
+
+    <!-- Subscribe Form -->
+    <form class="flex flex-col sm:flex-row gap-3 justify-center items-center max-w-md mx-auto" onsubmit="event.preventDefault()">
+      <input
+        type="email"
+        placeholder="your@email.com"
+        class="w-full sm:w-auto flex-1 bg-white/10 backdrop-blur-sm border border-white/25 rounded-lg px-5 py-3 text-white placeholder:text-white/40 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/30 transition-all text-center sm:text-left"
+        aria-label="Email address for newsletter"
+      />
+      <button
+        type="submit"
+        class="w-full sm:w-auto bg-gold text-dark font-heading font-bold uppercase tracking-wider px-8 py-3 rounded-lg hover:bg-gold/90 hover:shadow-lg hover:shadow-gold/20 transition-all cursor-pointer text-sm"
+      >
+        Join the Ride
+      </button>
+    </form>
+    <p class="text-white/40 text-xs mt-3 font-body">
+      Free. Stories delivered weekly. No spam, ever.
+    </p>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 animate-bounce">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7" />
+    </svg>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+---
+import type { Article } from '../data/articles';
+import { categoryLabels, categoryColors, getImageForArticle } from '../data/articles';
+
+interface Props {
+  article: Article;
+  index?: number;
+  variant?: 'light' | 'dark';
+  size?: 'default' | 'large';
+}
+
+const { article, index = 0, variant = 'dark', size = 'default' } = Astro.props;
+const isLarge = size === 'large';
+const isLight = variant === 'light';
+const image = getImageForArticle(article, index);
+---
+
+<a
+  href={article.beehiivUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    'group block rounded-lg overflow-hidden transition-all duration-300 hover:-translate-y-1 cursor-pointer',
+    isLight
+      ? 'bg-white shadow-card hover:shadow-card-hover'
+      : 'bg-charcoal border border-border-subtle hover:border-mauve/30 hover:shadow-card-dark-hover',
+    isLarge && 'md:grid md:grid-cols-2',
+  ]}
+>
+  <!-- Image -->
+  <div class:list={[
+    'relative overflow-hidden',
+    isLarge ? 'aspect-[16/10] md:aspect-auto md:min-h-full' : 'aspect-[16/10]',
+  ]}>
+    <img
+      src={image}
+      alt={article.title}
+      class="img-cover img-documentary group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+    <div class="absolute top-3 left-3">
+      <span class:list={['badge', categoryColors[article.category]]}>
+        {categoryLabels[article.category]}
+      </span>
+    </div>
+  </div>
+
+  <!-- Text -->
+  <div class:list={['p-4', isLarge && 'md:p-6 md:flex md:flex-col md:justify-center']}>
+    <h3 class:list={[
+      'font-heading font-semibold group-hover:text-gold transition-colors leading-snug',
+      isLight ? 'text-ink' : 'text-white',
+      isLarge ? 'text-h3 md:text-h2 mb-2' : 'text-h3 mb-1.5',
+    ]}>
+      {article.title}
+    </h3>
+
+    <p class:list={[
+      'leading-relaxed',
+      isLight ? 'text-ink-light' : 'text-cream/60',
+      isLarge ? 'text-sm md:text-base mb-3' : 'text-sm mb-2 line-clamp-2',
+    ]}>
+      {article.description}
+    </p>
+
+    <div class:list={[
+      'flex items-center gap-3 text-xs font-body',
+      isLight ? 'text-muted' : 'text-muted',
+    ]}>
+      <time datetime={article.date}>
+        {new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+      </time>
+      <span class="w-1 h-1 rounded-full bg-current opacity-40"></span>
+      <span>{article.readTime}</span>
+      <span class:list={[
+        'ml-auto text-xs transition-colors',
+        isLight ? 'text-sage group-hover:text-gold' : 'text-cream/30 group-hover:text-gold/60',
+      ]}>
+        Read &rarr;
+      </span>
+    </div>
+  </div>
+</a>

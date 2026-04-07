@@ -1,0 +1,45 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import { getFeaturedArticles } from '../data/articles';
+
+const featured = getFeaturedArticles();
+const hero = featured[0];
+const side = featured.slice(1, 3);
+const extra = featured.slice(3, 5);
+---
+
+<section class="section-light section-padding">
+  <div class="container-site">
+    <!-- Section header -->
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <span class="text-sage font-heading font-semibold text-xs uppercase tracking-widest">Featured</span>
+        <h2 class="text-h2 text-ink mt-1">Stories Worth Reading</h2>
+      </div>
+      <a href="/stories" class="hidden sm:inline-flex text-ink-light hover:text-sage text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+        View All &rarr;
+      </a>
+    </div>
+
+    <!-- Asymmetric grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-5">
+      {hero && (
+        <div class="lg:col-span-3">
+          <ArticleCard article={hero} index={0} variant="light" size="large" />
+        </div>
+      )}
+      <div class="lg:col-span-2 flex flex-col gap-5">
+        {side.map((article, i) => (
+          <ArticleCard article={article} index={i + 1} variant="light" />
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile link -->
+    <div class="mt-6 sm:hidden text-center">
+      <a href="/stories" class="text-ink-light hover:text-sage text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+        View All Stories &rarr;
+      </a>
+    </div>
+  </div>
+</section>

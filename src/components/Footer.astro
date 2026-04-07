@@ -1,0 +1,83 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'Instagram', href: '#' },
+  { name: 'YouTube', href: '#' },
+  { name: 'TikTok', href: '#' },
+  { name: 'Discord', href: '#' },
+  { name: 'Facebook', href: '#' },
+  { name: 'Twitter / X', href: '#' },
+  { name: 'LinkedIn', href: '#' },
+  { name: 'Threads', href: '#' },
+  { name: 'Bluesky', href: '#' },
+];
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Stories', href: '/stories' },
+  { label: 'About', href: '/about' },
+  { label: 'Submit Your Story', href: '/submit' },
+];
+---
+
+<footer class="bg-dark text-cream border-t border-white/5">
+  <div class="container-site py-12 lg:py-16">
+    <!-- Top row: Logo + Nav + Socials -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+      <!-- Logo + tagline -->
+      <div>
+        <a href="/" class="inline-block" aria-label="American Moto Co. — Home">
+          <img
+            src="/images/logo.png"
+            alt="American Moto Co."
+            class="h-8 w-auto invert mix-blend-screen"
+          />
+        </a>
+        <p class="mt-3 text-cream/40 text-sm max-w-xs leading-relaxed">
+          Breaking down the walls to share the stories from the road, no matter what you ride.
+        </p>
+      </div>
+
+      <!-- Nav Links -->
+      <div>
+        <h3 class="font-heading font-semibold text-xs uppercase tracking-wider text-cream/30 mb-4">Navigate</h3>
+        <ul class="flex flex-col gap-2">
+          {navLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-cream/60 hover:text-gold transition-colors text-sm">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class="font-heading font-semibold text-xs uppercase tracking-wider text-cream/30 mb-4">Connect</h3>
+        <div class="flex flex-wrap gap-2">
+          {socialLinks.map(social => (
+            <a
+              href={social.href}
+              class="text-cream/40 hover:text-gold transition-colors text-xs border border-white/10 rounded-full px-3 py-1 hover:border-gold/30 cursor-pointer"
+              aria-label={`Follow on ${social.name}`}
+            >
+              {social.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-cream/30 text-xs">
+        &copy; {currentYear} American Moto Co. All rights reserved.
+      </p>
+      <p class="text-cream/20 text-xs italic font-body">
+        Built for riders, who just want to ride.
+      </p>
+    </div>
+  </div>
+</footer>

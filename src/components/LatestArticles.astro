@@ -1,0 +1,40 @@
+---
+import ArticleCard from './ArticleCard.astro';
+import { getLatestArticles } from '../data/articles';
+
+interface Props {
+  count?: number;
+  title?: string;
+}
+
+const { count = 6, title = "Latest from the Road" } = Astro.props;
+const latest = getLatestArticles(count);
+---
+
+<section class="section-dark section-padding">
+  <div class="container-site">
+    <!-- Section header -->
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">Recent</span>
+        <h2 class="text-h2 text-white mt-1">{title}</h2>
+      </div>
+      <a href="/stories" class="hidden sm:inline-flex text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+        See More &rarr;
+      </a>
+    </div>
+
+    <!-- Article grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {latest.map((article, i) => (
+        <ArticleCard article={article} index={i} variant="dark" />
+      ))}
+    </div>
+
+    <div class="mt-6 sm:hidden text-center">
+      <a href="/stories" class="text-cream/50 hover:text-gold text-sm font-heading font-medium uppercase tracking-wider transition-colors cursor-pointer">
+        See More Stories &rarr;
+      </a>
+    </div>
+  </div>
+</section>

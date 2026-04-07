@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream font-body;
+    color: #2A2A2A;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-sage/20;
+    color: #1A1A1A;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply max-w-site mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-14 lg:py-20;
+  }
+
+  .section-dark {
+    @apply bg-dark text-cream;
+  }
+  .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
+    @apply text-white;
+  }
+
+  .section-light {
+    background-color: #FAF9F6;
+    color: #2A2A2A;
+  }
+
+  .section-sand {
+    background-color: #F0EDE5;
+    color: #2A2A2A;
+  }
+
+  .section-forest {
+    background-color: #1B3A1A;
+    @apply text-cream;
+  }
+  .section-forest h1, .section-forest h2, .section-forest h3, .section-forest h4 {
+    @apply text-white;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Category badge styles */
+  .badge {
+    @apply inline-block px-2.5 py-0.5 font-heading font-semibold uppercase tracking-wider rounded;
+    font-size: 11px;
+  }
+  .badge-profiles { @apply bg-mauve text-white; }
+  .badge-reviews { @apply bg-sage text-white; }
+  .badge-epic-rides { @apply bg-gold text-dark; }
+  .badge-weekly { @apply bg-charcoal text-cream; }
+  .badge-features { @apply bg-dark-brown text-white; }
+
+  /* Image treatment */
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+  .img-documentary {
+    filter: saturate(0.9) contrast(1.05);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-fade-up { animation: none; opacity: 1; }
+}

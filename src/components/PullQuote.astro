@@ -1,0 +1,32 @@
+---
+interface Props {
+  quote?: string;
+}
+
+const { quote = "Built for riders, who just want to ride." } = Astro.props;
+---
+
+<section class="relative py-16 lg:py-24 overflow-hidden section-forest">
+  <!-- Background image -->
+  <img
+    src="/images/forest-road.jpg"
+    alt=""
+    class="absolute inset-0 img-cover opacity-20"
+    loading="lazy"
+    aria-hidden="true"
+  />
+  <div class="absolute inset-0 bg-forest/80"></div>
+
+  <div class="relative container-site text-center">
+    <div class="w-12 h-0.5 bg-gold/60 mx-auto mb-6"></div>
+    <blockquote class="max-w-2xl mx-auto">
+      <p class="font-heading font-bold text-h1 text-white italic text-balance leading-snug">
+        &ldquo;{quote}&rdquo;
+      </p>
+    </blockquote>
+    <div class="w-12 h-0.5 bg-gold/60 mx-auto mt-6"></div>
+    <p class="text-cream/50 text-sm mt-4 font-heading uppercase tracking-wider">
+      American Moto Co.
+    </p>
+  </div>
+</section>

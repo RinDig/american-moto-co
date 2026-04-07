@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SubscribeBanner from '../components/SubscribeBanner.astro';
+---
+
+<BaseLayout title="About" description="American Moto Co. is a motorcycle culture media brand built for riders who just want to ride. No brand loyalty required.">
+  <!-- Hero with image -->
+  <section class="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+    <img src="/images/adventure-rider.jpg" alt="" class="absolute inset-0 img-cover opacity-25" aria-hidden="true" />
+    <div class="absolute inset-0 bg-dark/75"></div>
+    <div class="relative container-site">
+      <span class="text-gold/70 font-heading font-semibold text-xs uppercase tracking-widest">About</span>
+      <h1 class="text-h1 text-white mt-1 mb-6">We're here for the stories,<br />not the brands.</h1>
+      <p class="text-cream/80 text-body-lg max-w-2xl leading-relaxed">
+        American Moto Co. is a motorcycle culture media brand. We tell stories from the road — real riders, real miles, real talk. No brand tribalism, no gatekeeping, no posturing. If you ride, you're in.
+      </p>
+    </div>
+  </section>
+
+  <!-- Values — light section -->
+  <section class="section-light section-padding">
+    <div class="container-site">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-h3 text-ink mb-3">Community First</h3>
+          <p class="text-ink-light text-sm leading-relaxed">
+            The best motorcycle content comes from the people who ride. Our stories are told by the community, for the community — not by a marketing department.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-h3 text-ink mb-3">Authenticity Always</h3>
+          <p class="text-ink-light text-sm leading-relaxed">
+            No stock language. No corporate voice. We let riders speak in their own words and show the road as it really is — beautiful, messy, and full of surprises.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-sage" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-h3 text-ink mb-3">No Matter What You Ride</h3>
+          <p class="text-ink-light text-sm leading-relaxed">
+            Harley, Honda, KTM, Vespa — we don't care. If it has two wheels and you love riding it, you belong here. Period.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story — photo + text split -->
+  <section class="section-sand section-padding">
+    <div class="container-site">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="rounded-lg overflow-hidden aspect-[4/3]">
+          <img src="/images/rider-1.jpg" alt="Motorcycle rider on a forest road" class="img-cover img-documentary" loading="lazy" />
+        </div>
+        <div>
+          <h2 class="text-h2 text-ink mb-6">The Story Behind the Story</h2>
+          <div class="space-y-4 text-ink-light text-base leading-relaxed">
+            <p>
+              American Moto Co. started with a simple idea: motorcycle media shouldn't make you feel like you need to pick a side.
+            </p>
+            <p>
+              Too much of what's out there is built around brand loyalty. We thought that was boring. The most interesting riders we know don't care about any of that. They just want to ride, and they've got stories worth hearing.
+            </p>
+            <p>
+              So we started collecting them. Long-form interviews with riders who've crossed continents. Reviews written by the people who actually own the bikes. Routes mapped by riders who took the wrong turn and found something better.
+            </p>
+            <p class="text-sage italic font-heading text-h3 !leading-snug pt-2">
+              That's it. That's the whole thing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SubscribeBanner />
+</BaseLayout>

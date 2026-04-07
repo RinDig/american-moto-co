@@ -1,0 +1,65 @@
+---
+import { categoryLabels, getCategoryCount } from '../data/articles';
+import type { Category } from '../data/articles';
+
+const categories: { id: Category; description: string; image: string }[] = [
+  {
+    id: 'profiles',
+    description: 'Long-form interviews with riders from every walk of life.',
+    image: '/images/rider-1.jpg',
+  },
+  {
+    id: 'reviews',
+    description: 'Honest motorcycle reviews from the people who actually ride them.',
+    image: '/images/bike-closeup.jpg',
+  },
+  {
+    id: 'epic-rides',
+    description: 'Routes, roads, and rides that belong on your bucket list.',
+    image: '/images/mountain-road.jpg',
+  },
+  {
+    id: 'features',
+    description: 'Deep dives into motorcycle culture, events, and community.',
+    image: '/images/group-ride.jpg',
+  },
+];
+---
+
+<section class="section-sand section-padding">
+  <div class="container-site">
+    <div class="text-center mb-10">
+      <span class="text-sage font-heading font-semibold text-xs uppercase tracking-widest">Explore</span>
+      <h2 class="text-h2 text-ink mt-1">What Are You Into?</h2>
+      <p class="text-ink-light mt-2 max-w-md mx-auto text-sm">No matter what you ride or read — there's something here for you.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {categories.map(cat => (
+        <a
+          href={`/stories?category=${cat.id}`}
+          class="group block rounded-lg overflow-hidden bg-white shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer hover:-translate-y-1"
+        >
+          <!-- Category image -->
+          <div class="aspect-[16/9] overflow-hidden">
+            <img
+              src={cat.image}
+              alt={categoryLabels[cat.id]}
+              class="img-cover img-documentary group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-4">
+            <h3 class="font-heading font-semibold text-ink text-h3 mb-1 group-hover:text-sage transition-colors">
+              {categoryLabels[cat.id]}
+            </h3>
+            <p class="text-ink-light text-xs leading-relaxed mb-2">{cat.description}</p>
+            <span class="text-sage text-xs font-heading font-medium uppercase tracking-wider">
+              {getCategoryCount(cat.id)} stories &rarr;
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
